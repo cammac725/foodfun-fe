@@ -6,6 +6,7 @@ import Header from './components/Header'
 import PrivateRoute from './components/PrivateRoute'
 import MyMeals from './components/MyMeals'
 import Login from './components/Login'
+import Register from './components/Register'
 import './App.css'
 
 class App extends Component {
@@ -31,4 +32,8 @@ class App extends Component {
     }
   }
 
-export default App;
+  const mapStateToProps = ({ meals }) => ({
+    meals
+  })
+
+export default connect(mapStateToProps, {})(App);
