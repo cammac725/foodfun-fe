@@ -4,7 +4,10 @@ import {
   LOGIN_SUCCESS,
   REGISTER_SUCCESS,
   FETCH_MEALS_SUCCESS,
-} from '../actions'
+  ADD_MEAL_SUCCESS,
+  UPDATE_MEAL_SUCCESS,
+  DELETE_MEAL_SUCCESS
+} from "../actions";
 
 const initialState = {
   error: '',
@@ -12,6 +15,9 @@ const initialState = {
   loading: false,
   isLoggedIn: false,
   addingUser: false,
+  addingMeal: false,
+  updatingMeal: false,
+  deletingMeal: false
 }
 
 export const reducer = (state = initialState, action) => {
@@ -55,6 +61,33 @@ export const reducer = (state = initialState, action) => {
         error: '',
         meals: [...action.payload],
         loading: false
+      }
+
+    case ADD_MEAL_SUCCESS:
+      return {
+        ...state,
+        error: '',
+        meals: [...action.payload],
+        loading: false,
+        addingMeal: true
+      }
+
+    case UPDATE_MEAL_SUCCESS:
+      return {
+        ...state,
+        error: '',
+        meals: [...action.payload],
+        loading: false,
+        updatingMeal: true
+      }
+
+    case DELETE_MEAL_SUCCESS:
+      return {
+        ...state,
+        error: '',
+        loading: false,
+        meals: [...action.payload],
+        deletingMeal:true
       }
 
     default:
