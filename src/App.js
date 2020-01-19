@@ -8,6 +8,7 @@ import MyMeals from './components/MyMeals'
 import Meal from './components/Meal'
 import Login from './components/Login'
 import Register from './components/Register'
+import AddMeal from './components/AddMeal'
 import './App.css'
 
 class App extends Component {
